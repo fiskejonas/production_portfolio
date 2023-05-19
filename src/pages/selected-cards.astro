@@ -1,0 +1,21 @@
+---
+// Component Imports
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/styles.css";
+---
+
+<MainLayout title="selected">
+  <h1>Selected Cards</h1>
+  <section></section>
+  <template id="cards">
+    <article class="template_article outline">
+      <h3 class="template_navn"></h3>
+      <iframe class="template_frame" src="" frameborder="0"></iframe>
+      <p class="template_beskrivelse"></p>
+    </article>
+  </template>
+
+  <script>
+    import "../scripts/selected-cards.js";
+  </script>
+</MainLayout>

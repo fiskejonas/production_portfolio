@@ -1,0 +1,95 @@
+---
+// Component Imports
+import Button from "../components/Button.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/styles.css";
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<MainLayout title="Wavemaker Production">
+  <section id="hero">
+    <div class="grid place-items-center h-screen content-center">
+      <div class="flex flex-col place-items-center max-w-[400px]">
+        <h1 class="text-2xl font-helvetica2">
+          pro <br /> duc <br /> tion<span class="text-accent200">.</span>
+        </h1>
+        <h2 class="font-helvetica2 text-xs pt-xs sibling1 text-neutral400">
+          Banners. Offline. Video.
+        </h2>
+        <p class="font-georgia text-2xs sibling2 pt-xs text-neutral400">
+          Here you’ll find the production teams’ best work and a collection of
+          selected cases.
+        </p>
+        <div class="flex flex-col m-sm gap-xs">
+          <Button>Take me to the archive!</Button>
+          <Button>Show me the best cases!</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="grid w-full place-items-center" id="archive">
+    <h2 class="text-md font-helvetica2">
+      archive<span class="text-accent200">.</span>
+    </h2>
+    <div id="banners" class="">
+      <div
+        class="banner_filtering flex flex-col items-center justify-center w-full gap-xs"
+      >
+        <div class="flex items-end gap-xs pt-sm">
+          <h2 class="font-helvetica2 text-md">banners</h2>
+          <img
+            src="../icons/fakta.svg"
+            class="max-w-[45px]"
+            alt="icon of a checklist"
+          />
+        </div>
+        <div
+          class="banners_titles text-xs flex items-center justify-center w-full"
+        >
+          <h2 class="font-helvetica2 uppercase" id="brandTitle"></h2>
+          <div class="px-xs">|</div>
+          <h3 class="font-helvetica" id="kategoriSubtitle"></h3>
+        </div>
+
+        <div class="p-2 m-5" id="frames_test">
+          <!-- Added dropdown menus for category and brand -->
+          <div class="mt-5">
+            <select id="kategoriSelect" class="mr-5">
+              <option value="">All Categories</option>
+              <!-- Options will be added dynamically -->
+            </select>
+
+            <select id="brandSelect">
+              <option value="">All Brands</option>
+              <!-- Options will be added dynamically -->
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-sm">
+        <template>
+          <div class="py-xs">
+            <article
+              class="template_article p-5 bg-slate-300 w-full flex flex-col items-center justify-center"
+            >
+              <iframe class="template_frame rounded-sm" src="" frameborder="0"
+              ></iframe>
+              <p class="template_beskrivelse"></p>
+            </article>
+          </div>
+        </template>
+      </div>
+
+      <section class="flex flex-col gap-5" id="gallery"></section>
+
+      <button id="view-selected-cards" type="button">View Selected Cards</button
+      >
+    </div>
+    <script>
+      import "../scripts/script2.js";
+    </script>
+  </section>
+</MainLayout>
