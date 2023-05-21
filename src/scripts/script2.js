@@ -73,7 +73,7 @@ function visCards() {
       klon.querySelector(".template_beskrivelse").textContent =
         card.description;
       klon.querySelector(".template_navn").textContent = card.title;
-      klon.querySelector(".top-mid").href =
+      klon.querySelector(".top-mid-link").href =
         "https://wmcontent.dk/_HighImpact/" + card.top_and_mid_link;
 
       // Tilføj klikhændelseslytter til hvert kort

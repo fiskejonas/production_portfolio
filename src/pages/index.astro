@@ -3,6 +3,7 @@
 import Button from "../components/Button.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/styles.css";
+import Tag from "../components/Tag.astro";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -79,44 +80,34 @@ import "../styles/styles.css";
                 class="template_frame w-full pointer-events-none rounded-sm aspect-[339/129]"
                 src=""
                 frameborder="0"></iframe>
-              <div
-                class="text-and-btns flex flex-col md:flex-row group-hover:p-xs sm:group-hover:p-sm"
-              >
+              <div class="text-and-btns group-hover:p-xs sm:group-hover:p-sm">
                 <div class="card_text flex flex-col w-fit">
-                  <h4
-                    class="template_navn font-helvetica2 text-2xs sm:text-xs text-neutral400 pb-xs"
-                  >
-                  </h4>
+                  <div class="flex items-center pb-xs">
+                    <h4
+                      class="template_navn font-helvetica2 text-2xs sm:text-xs text-neutral400 mr-xs"
+                    >
+                    </h4>
+                    <p class="performance text-neutral300">
+                      <span class="text-positive100"> CTR: +0,1%</span> &<span
+                        class="text-positive100"
+                      >
+                        BTR: +0,05%</span
+                      >
+                    </p>
+                  </div>
                   <p
                     class="template_beskrivelse max-w-lg font-georgia text-2xs text-neutral300 hidden sm:block"
                   >
                   </p>
                 </div>
-                <div
-                  class="card-btn-performance sm:justify-end items-end text-neutral400 flex flex-wrap"
-                >
-                  <div
-                    class="card-performance justify-end pb-xs items-end text-positive100 sm:flex-row sm:flex gap-xs hidden w-full"
-                  >
-                    <div
-                      class="ctr outline h-fit outline-positive100 outline-[1px] text-3xs rounded-sm px-xs py-2xs"
-                    >
-                      <span class="font-helvetica2"> CTR</span> | 0,1%
-                    </div>
-                    <div
-                      class="ctc outline h-fit outline-positive100 text-3xs rounded-sm px-xs py-2xs outline-[1px]"
-                    >
-                      <span class="font-helvetica2"> CTC</span> | 0,05%
-                    </div>
-                  </div>
+                <div class="card-btn flex items-end ml-auto pt-sm">
                   <a
+                    class="appearance-none top-mid-link py-xs px-sm bg-tertiary100 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75"
                     href=""
                     target="_blank"
-                    rel="noopener noreferrer"
-                    class="top-mid sm:px-sm sm:py-xs max-w-lg h-fit px-xs justify-center sm:ml-sm text-center py-2xs font-helvetica text-3xs sm:text-2xs bg-tertiary100 rounded-sm shadow-lg flex items-center"
+                    rel="noopener noreferrer">Top and mid-scroll</a
                   >
-                    Show top & midscroll</a
-                  >
+                  <!-- <Button>Top and mid-scroll</Button> -->
                 </div>
               </div>
             </article>

@@ -34,12 +34,10 @@
   outline: 3px solid #58c369;
   outline-offset: -2px;
 }
-@media only screen and (min-width: 640px) {
-  #gallery {
-    gap: 25px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  }
+
+article {
+  container-type: inline-size;
+  container-name: card;
 }
 
 .text-and-btns {
@@ -49,4 +47,33 @@
 
 .template_article:hover .text-and-btns {
   max-height: 500px;
+}
+
+@container card (min-width: 700px) {
+  .text-and-btns {
+    display: flex;
+    flex-direction: row;
+  }
+  .card-btn {
+    justify-content: center;
+  }
+}
+
+@container card (max-width: 700px) {
+  .card-btn {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  #gallery {
+    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+@media only screen and (max-width: 640px) {
+  .text-and-btns {
+    display: none;
+  }
 }
