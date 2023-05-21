@@ -33,7 +33,7 @@ import "../styles/styles.css";
     <h2 class="text-md font-helvetica2">
       archive<span class="text-accent200">.</span>
     </h2>
-    <div id="banners" class="">
+    <div id="banners" class="w-full">
       <div
         class="banner_filtering flex flex-col items-center justify-center w-full gap-xs"
       >
@@ -69,21 +69,62 @@ import "../styles/styles.css";
         </div>
       </div>
 
-      <div class="pt-sm">
-        <template>
-          <div class="py-xs">
+      <div class="pt-sm w-full">
+        <template class="w-full">
+          <div class="py-xs cards-ting w-full">
             <article
-              class="template_article p-5 bg-slate-300 w-full flex flex-col items-center justify-center"
+              class="template_article w-full h-fit rounded-sm bg-primary100 cursor-cell group"
             >
-              <iframe class="template_frame rounded-sm" src="" frameborder="0"
-              ></iframe>
-              <p class="template_beskrivelse"></p>
+              <iframe
+                class="template_frame w-full pointer-events-none rounded-sm aspect-[339/129]"
+                src=""
+                frameborder="0"></iframe>
+              <div
+                class="text-and-btns flex flex-col md:flex-row group-hover:p-xs sm:group-hover:p-sm"
+              >
+                <div class="card_text flex flex-col w-fit">
+                  <h4
+                    class="template_navn font-helvetica2 text-2xs sm:text-xs text-neutral400 pb-xs"
+                  >
+                  </h4>
+                  <p
+                    class="template_beskrivelse max-w-lg font-georgia text-2xs text-neutral300 hidden sm:block"
+                  >
+                  </p>
+                </div>
+                <div
+                  class="card-btn-performance sm:justify-end items-end text-neutral400 flex flex-wrap"
+                >
+                  <div
+                    class="card-performance justify-end pb-xs items-end text-positive100 sm:flex-row sm:flex gap-xs hidden w-full"
+                  >
+                    <div
+                      class="ctr outline h-fit outline-positive100 outline-[1px] text-3xs rounded-sm px-xs py-2xs"
+                    >
+                      <span class="font-helvetica2"> CTR</span> | 0,1%
+                    </div>
+                    <div
+                      class="ctc outline h-fit outline-positive100 text-3xs rounded-sm px-xs py-2xs outline-[1px]"
+                    >
+                      <span class="font-helvetica2"> CTC</span> | 0,05%
+                    </div>
+                  </div>
+                  <a
+                    href=""
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="top-mid sm:px-sm sm:py-xs max-w-lg h-fit px-xs justify-center sm:ml-sm text-center py-2xs font-helvetica text-3xs sm:text-2xs bg-tertiary100 rounded-sm shadow-lg flex items-center"
+                  >
+                    Show top & midscroll</a
+                  >
+                </div>
+              </div>
             </article>
           </div>
         </template>
       </div>
 
-      <section class="flex flex-col gap-5" id="gallery"></section>
+      <section class="flex flex-col w-full" id="gallery"></section>
 
       <button id="view-selected-cards" type="button">View Selected Cards</button
       >

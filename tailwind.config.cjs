@@ -33,6 +33,7 @@ module.exports = {
       extend: {},
     },
     spacing: {
+      "2xs": "0.3125rem",
       xs: "0.625rem",
       sm: "1.5625rem",
       md: "3.125rem",

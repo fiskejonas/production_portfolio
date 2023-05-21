@@ -1,13 +1,13 @@
 // selected-cards.js
 
 // API URL og options (inklusiv API-nøgle)
+// URL til API'en og options med API-nøgle
 const url = "https://frames-5130.restdb.io/rest/frames";
 const options = {
   headers: {
     "x-apikey": "644143ee39cf552ef728c336",
   },
 };
-
 // Funktion til at hente valgte kort-IDs fra URL'en
 function getSelectedCardIds() {
   const queryString = new URLSearchParams(window.location.search);

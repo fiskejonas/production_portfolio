@@ -72,6 +72,9 @@ function visCards() {
         "https://wmcontent.dk/_HighImpact/" + card.link;
       klon.querySelector(".template_beskrivelse").textContent =
         card.description;
+      klon.querySelector(".template_navn").textContent = card.title;
+      klon.querySelector(".top-mid").href =
+        "https://wmcontent.dk/_HighImpact/" + card.top_and_mid_link;
 
       // Tilføj klikhændelseslytter til hvert kort
       klon.querySelector(".template_article").addEventListener("click", (e) => {
