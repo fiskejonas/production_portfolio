@@ -23,7 +23,7 @@ module.exports = {
       sm: ["3rem", { lineHeight: "100%", letterSpacing: "-0.03em" }],
       md: ["4rem", { lineHeight: "50px", letterSpacing: "-0.03em" }],
       lg: ["6.25rem", { lineHeight: "80%", letterSpacing: "-0.03em" }],
-      xl: ["8rem", { lineHeight: "81%", letterSpacing: "-0.03em" }],
+      xl: ["8rem", { lineHeight: "45%", letterSpacing: "-0.03em" }],
       "2xl": ["8.37rem", { lineHeight: "81%", letterSpacing: "-0.03em" }],
     },
     fontFamily: {

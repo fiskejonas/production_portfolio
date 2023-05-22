@@ -1,10 +1,10 @@
 <header
-  class="sm:w-fit z-50 sm:h-fit flex items-center justify-center h-[100vh] w-[100vw] sm:-translate-x-[0%] sm:block sm:-translate-y-[0%] sm:top-[0%] sm:left-[0%] sm:outline sm:outline-[5px] top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] sm:outline-accent200 sm:outline-offset-[-5px] sm:px-[15px] sm:pt-sm sm:pb-[15px] sm:m-sm sm:rounded-md fixed"
+  class="sm:w-fit z-50 shadow-lg sm:h-fit flex items-center justify-center h-[100vh] w-[100vw] sm:-translate-x-[0%] sm:block sm:-translate-y-[0%] sm:top-[0%] sm:left-[0%] sm:outline sm:outline-[5px] top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] sm:outline-accent200 sm:outline-offset-[-5px] sm:px-[15px] sm:pt-sm sm:pb-[15px] sm:m-sm sm:rounded-md fixed"
 >
   <nav class="nav_container">
     <button
       id="menu-btn"
-      class="menu_icon fixed top-[25px] right-[25px] sm:hidden bg-neutral100"
+      class="menu_icon fixed top-[25px] right-[25px] sm:hidden"
     >
       <img src="../icons/burger.svg" alt="burgermenu icon" />
     </button>
@@ -12,16 +12,13 @@
       id="nav_links2"
       class="nav_links font-helvetica text-3xs flex-col gap-sm text-center z-50 hidden sm:flex"
     >
-      <a
-        href="index.astro"
-        class="home flex flex-col gap-xs justify-center items-center"
-      >
+      <a href="/" class="home flex flex-col gap-xs justify-center items-center">
         <img class="hej max-w-[35px]" src="../icons/home.svg" alt="home icon" />
         <p class="">Home</p>
         <img class="max-w-[33px]" src="../icons/line.svg" alt="thin line" />
       </a>
       <a
-        href="index.astro#banners"
+        href="/#banners"
         class="banners_nav flex flex-col gap-xs justify-center items-center"
       >
         <img

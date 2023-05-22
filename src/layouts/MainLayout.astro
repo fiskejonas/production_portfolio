@@ -13,9 +13,9 @@ let { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="bg-neutral100 ml-[25px] mr-[25px] sm:ml-[150px] sm:mr-[50px]">
+  <body class="bg-neutral100">
     <Header />
-    <main class="">
+    <main class="bg-neutral100 ml-[25px] mr-[25px] sm:ml-[150px] sm:mr-[50px]">
       <slot />
     </main>
     <Footer />

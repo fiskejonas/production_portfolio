@@ -2,17 +2,70 @@
 // Component Imports
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/styles.css";
+import Button2 from "../components/Button2.astro";
+import Button5 from "../components/Button5.astro";
 ---
 
-<MainLayout title="selected">
-  <h1>Selected Cards</h1>
-  <section></section>
-  <template id="cards">
-    <article class="template_article outline">
-      <h3 class="template_navn"></h3>
-      <iframe class="template_frame" src="" frameborder="0"></iframe>
-      <p class="template_beskrivelse"></p>
-    </article>
+<MainLayout title="Selected Creative Assets">
+  <div
+    class="selected_wrapper w-full h-full flex flex-col items-center justify-center mt-md"
+  >
+    <div
+      class="selected_titles flex flex-col w-full pt-md pb-sm items-center justify-center gap-xs h-full"
+    >
+      <h1 class="text-lg font-helvetica2">
+        banners<span class="text-accent100">.</span>
+      </h1>
+      <h2 class="text-sm font-helvetica2 text-neutral300">
+        Wavemaker Production
+      </h2>
+    </div>
+    <section
+      class="flex flex-col items-center justify-center w-full h-full"
+      id="gallery"
+    >
+    </section>
+    <div class="line flex flex-col items-center justify-center w-full">
+      <div class="border border-b-4 mt-md w-1/2"></div>
+      <Button5>Copy link</Button5>
+    </div>
+  </div>
+
+  <template class="w-full h-full">
+    <div class="py-xs cards-ting w-full">
+      <article
+        class="template_article lg:rounded-md w-full h-fit rounded-sm bg-primary100 group shadow-lg"
+      >
+        <iframe
+          class="template_frame shadow-lg lg:rounded-md w-full pointer-events-none rounded-sm aspect-[339/129]"
+          src=""
+          frameborder="0"></iframe>
+        <div class="text-and-btns group-hover:p-xs sm:group-hover:p-sm">
+          <div class="card_text flex flex-col w-fit">
+            <div class="flex items-center pb-xs">
+              <h4
+                class="template_navn font-helvetica2 text-2xs sm:text-xs text-neutral400 mr-xs"
+              >
+              </h4>
+              <p class="performance text-neutral300">
+                <span class="text-positive100"> CTR: +0,1%</span> &<span
+                  class="text-positive100"
+                >
+                  BTR: +0,05%</span
+                >
+              </p>
+            </div>
+            <p
+              class="template_beskrivelse max-w-lg font-georgia text-2xs text-neutral300 hidden sm:block"
+            >
+            </p>
+          </div>
+          <div class="card-btn flex items-end ml-auto pt-sm">
+            <Button2 href="">Top & midscroll</Button2>
+          </div>
+        </div>
+      </article>
+    </div>
   </template>
 
   <script>

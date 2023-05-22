@@ -1,4 +1,4 @@
-// URL til API'en og options med API-nøgle
+// URL to the API and options with API key
 const url = "https://frames-5130.restdb.io/rest/frames";
 const options = {
   headers: {
@@ -6,30 +6,30 @@ const options = {
   },
 };
 
-// Kortdata
+// Card data
 let cards;
 
-// Asynkron funktion til at hente kortdata fra API'en
-async function hentData() {
+// Asynchronous function to get card data from the API
+async function fetchData() {
   const JSONDATA = await fetch(url, options);
   cards = await JSONDATA.json();
 
-  const kategoriSelect = document.getElementById("kategoriSelect");
+  const categorySelect = document.getElementById("kategoriSelect");
   const brandSelect = document.getElementById("brandSelect");
 
-  let kategorier = new Set();
+  let categories = new Set();
   let brands = new Set();
 
   cards.forEach((card) => {
-    kategorier.add(card.kategori);
+    categories.add(card.kategori);
     brands.add(card.brand);
   });
 
-  kategorier.forEach((kategori) => {
+  categories.forEach((kategori) => {
     const option = document.createElement("option");
     option.value = kategori;
     option.text = kategori;
-    kategoriSelect.appendChild(option);
+    categorySelect.appendChild(option);
   });
 
   brands.forEach((brand) => {
@@ -39,15 +39,16 @@ async function hentData() {
     brandSelect.appendChild(option);
   });
 
-  // Vis kortdata, når de er hentet
-  visCards();
+  // Show card data once it's fetched
+  showCards();
+  updateButtonVisibility();
 }
 
-// Set til at holde styr på valgte kort
+// Set to keep track of selected cards
 let selectedCards = new Set();
 
-// Funktion til at vise kortdata i DOM'en
-function visCards() {
+// Function to display card data in the DOM
+function showCards() {
   const gallery = document.getElementById("gallery");
   const template = document.querySelector("template").content;
   gallery.textContent = "";
@@ -61,55 +62,86 @@ function visCards() {
     kategori || "All Categories";
 
   cards.forEach((card) => {
-    // Vis kort, der passer til filteret
+    // Show cards that match the filter
     if (
       (kategori == "" || kategori == card.kategori) &&
       (brand == "" || brand == card.brand)
     ) {
-      const klon = template.cloneNode(true);
+      const clone = template.cloneNode(true);
 
-      klon.querySelector(".template_frame").src =
+      clone.querySelector(".template_frame").src =
         "https://wmcontent.dk/_HighImpact/" + card.link;
-      klon.querySelector(".template_beskrivelse").textContent =
+      clone.querySelector(".template_beskrivelse").textContent =
         card.description;
-      klon.querySelector(".template_navn").textContent = card.title;
-      klon.querySelector(".top-mid-link").href =
+      clone.querySelector(".template_navn").textContent = card.title;
+      clone.querySelector(".knap").href =
         "https://wmcontent.dk/_HighImpact/" + card.top_and_mid_link;
 
-      // Tilføj klikhændelseslytter til hvert kort
-      klon.querySelector(".template_article").addEventListener("click", (e) => {
-        // Vælg/fravælg kort og opdater selectedCards med id'er
-        e.currentTarget.classList.toggle("selected");
-        if (selectedCards.has(card)) {
-          selectedCards.delete(card);
-        } else {
-          selectedCards.add(card);
-        }
-      });
+      // Add click event listener to each card
+      clone
+        .querySelector(".template_article")
+        .addEventListener("click", (e) => {
+          // Select/deselect card and update selectedCards with ids
+          e.currentTarget.classList.toggle("selected");
+          if (selectedCards.has(card)) {
+            selectedCards.delete(card);
+          } else {
+            selectedCards.add(card);
+          }
+          updateButtonVisibility();
+        });
 
-      // Tilføj kortklon til DOM'en
-      gallery.appendChild(klon);
+      // Add card clone to the DOM
+      gallery.appendChild(clone);
     }
   });
 }
 
-// Funktion til at navigere til valgte kortside med valgte kort-IDs som forespørgselsparametre
+// Function to navigate to selected cards page with selected card IDs as query parameters
 function navigateToSelectedCards() {
   const selectedIds = Array.from(selectedCards, (card) => card._id).join(",");
   window.location.href = `selected-cards.html?ids=${selectedIds}`;
 }
 
-// Tilføj klikhændelseslytter til "view-selected-cards" knappen
+// Add click event listener to "view-selected-cards" button
 document
   .getElementById("view-selected-cards")
   .addEventListener("click", navigateToSelectedCards);
 
-// Hent og vis kortdata
-hentData();
+// Fetch and display card data
+fetchData();
 
-// Tilføj event listeners til dropdowns
-document.getElementById("kategoriSelect").addEventListener("change", visCards);
-document.getElementById("brandSelect").addEventListener("change", visCards);
+// Add event listeners to dropdowns
+document.getElementById("kategoriSelect").addEventListener("change", showCards);
+document.getElementById("brandSelect").addEventListener("change", showCards);
+
+function deselectAllCards() {
+  selectedCards.clear();
+  const selectedElements = document.querySelectorAll(
+    ".template_article.selected"
+  );
+  selectedElements.forEach((el) => el.classList.remove("selected"));
+  updateButtonVisibility();
+}
+
+document
+  .getElementById("deselect-all-cards")
+  .addEventListener("click", deselectAllCards);
+
+function updateButtonVisibility() {
+  const viewSelectedCardsButton = document.getElementById(
+    "view-selected-cards"
+  );
+  const deselectAllCardsButton = document.getElementById("deselect-all-cards");
+
+  if (selectedCards.size > 0) {
+    viewSelectedCardsButton.style.display = "block";
+    deselectAllCardsButton.style.display = "block";
+  } else {
+    viewSelectedCardsButton.style.display = "none";
+    deselectAllCardsButton.style.display = "none";
+  }
+}
 
 var siblingWidth = document.querySelector(".sibling1").offsetWidth;
 document.querySelector(".sibling2").style.width = siblingWidth + "px";

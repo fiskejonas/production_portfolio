@@ -46,9 +46,37 @@ function visCards(cardsToDisplay) {
     klon.querySelector(".template_frame").src =
       "https://wmcontent.dk/_HighImpact/" + card.link;
     klon.querySelector(".template_beskrivelse").textContent = card.description;
+    klon.querySelector(".template_navn").textContent = card.title;
+    klon.querySelector(".knap").href =
+      "https://wmcontent.dk/_HighImpact/" + card.top_and_mid_link;
     section.appendChild(klon);
   });
 }
 
 // Kald displaySelectedCards-funktionen for at vise de valgte kort
 displaySelectedCards();
+
+const button = document.getElementById("copyButton");
+
+button.addEventListener("click", () => {
+  // Get the current page URL
+  const link = window.location.href;
+
+  // Create a new textarea element, set its value to the link, and add it to the DOM
+  const textarea = document.createElement("textarea");
+  textarea.value = link;
+  document.body.appendChild(textarea);
+
+  // Select the link inside the textarea and copy it to the clipboard
+  textarea.select();
+  document.execCommand("copy");
+
+  // Remove the textarea from the DOM
+  document.body.removeChild(textarea);
+
+  // Change the button text to indicate that the link has been copied
+  button.textContent = "Link Copied!";
+
+  // Change the button text back after 4 seconds
+  setTimeout(() => (button.textContent = "Copy Link"), 4000);
+});
