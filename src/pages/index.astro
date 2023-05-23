@@ -47,12 +47,12 @@ import Button4 from "../components/Button4.astro";
         <h2 class="font-helvetica2 sm:text-lg md:text-xl text-md">banners</h2>
         <img
           src="../icons/fakta.svg"
-          class="max-w-[45px] md:hidden sm:max-w-[70px]"
+          class="max-w-[45px] lg:hidden sm:max-w-[70px]"
           alt="icon of a checklist"
         />
       </div>
       <div
-        class="filters_and_facts flex sm:flex-row flex-col items-center w-full gap-xs text-neutral400"
+        class="filters_and_facts flex md:flex-col md:w-fit md:items-start justify-center lg:items-center lg:w-full lg:flex-row flex-col items-center w-full gap-xs text-neutral400 outline"
       >
         <div class="banners_titles text-2xs sm:text-xs flex mr-sm">
           <h2 class="font-helvetica2 uppercase" id="brandTitle"></h2>
@@ -62,7 +62,7 @@ import Button4 from "../components/Button4.astro";
 
         <div class="p-2 m-5 flex" id="frames_test">
           <!-- Added dropdown menus for category and brand -->
-          <div class="flex gap-xs font-helvetica">
+          <div class="flex gap-xs font-helvetica text-2xs sm:text-xs">
             <select
               id="kategoriSelect"
               class="py-2xs md:py-xs md:px-sm px-xs rounded-lg flex bg-neutral200 z-50"
@@ -80,7 +80,7 @@ import Button4 from "../components/Button4.astro";
             </select>
           </div>
         </div>
-        <div class="fakta_desk flex ml-auto">
+        <div class="fakta_desk lg:flex ml-auto hidden">
           <img
             src="../icons/fakta2.svg"
             class="max-h-[70px] hidden md:flex"
@@ -141,6 +141,42 @@ import Button4 from "../components/Button4.astro";
       <Button4>Deselect All</Button4>
       <!-- <button id="deselect-all-cards" type="button">Deselect All</button> -->
     </div>
+    <div class="w-full pt-xl" id="offline">
+      <div
+        class="offline-text-and-filters flex flex-col gap-sm sm:gap-md outline items-center justify-center"
+      >
+        <h2
+          class="offline-title outline sm:text-xl text-md font-helvetica2 sm:w-full mr-[0px] sm:mr-auto"
+        >
+          offline
+        </h2>
+        <div
+          class="offline-brand-and-type-and-filters sm:flex-row flex-col sm:w-full sm:mr-auto flex gap:xs sm:gap-sm items-center text-xs font-helvetica2 text-neutral400"
+        >
+          <div class="offline-brand-and-type flex gap-xs">
+            <h3 class="uppercase">garnier</h3>
+            <div>|</div>
+            <h4 class="offline-brand capitalize font-helvetica">OOH</h4>
+          </div>
+          <div
+            class="offline-filters font-helvetica text-2xs sm:text-xs flex gap-sm"
+          >
+            <select
+              class="py-2xs md:py-xs md:px-sm px-xs rounded-md bg-neutral200"
+              name="type"
+              id=""><option value="">All types</option></select
+            >
+            <select
+              class="py-2xs md:py-xs md:px-sm px-xs rounded-md bg-neutral200"
+              name="brand"
+              id=""><option value="">All brands</option></select
+            >
+          </div>
+        </div>
+      </div>
+      <div class="offline-content"></div>
+    </div>
+
     <script>
       import "../scripts/script2.js";
     </script>
