@@ -28,16 +28,15 @@ async function displaySelectedCards() {
 
 // Funktion til at vise kort i DOM'en
 function visCards(cardsToDisplay) {
-  const section = document.querySelector("#offline-gallery2");
-  const template = document.querySelector(".offline-template").content;
+  const section = document.querySelector("#video-gallery2");
+  const template = document.querySelector(".video-template").content;
   section.textContent = "";
 
   // Iterer gennem kortene og tilføj dem til DOM'en
   cardsToDisplay.forEach((card) => {
     const klon = template.cloneNode(true);
 
-    klon.querySelector(".offline-template_frame").src =
-      "../images/" + card.link;
+    klon.querySelector(".video-template_frame").src = "../images/" + card.link;
     section.appendChild(klon);
   });
 }

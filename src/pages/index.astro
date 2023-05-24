@@ -143,7 +143,7 @@ import Button7 from "../components/Button7.astro";
       <Button4>Deselect All</Button4>
       <!-- <button id="deselect-all-cards" type="button">Deselect All</button> -->
       <script>
-        // import "../scripts/script2.js";
+        import "../scripts/banners.js";
       </script>
     </div>
     <div
@@ -208,44 +208,94 @@ import Button7 from "../components/Button7.astro";
                 src=""
               />
             </article>
-            <div class="text-and-btns group-hover:p-xs sm:group-hover:p-sm">
-              <div class="card_text flex flex-col w-fit">
-                <div class="flex items-center pb-xs">
-                  <h4
-                    class="template_navn font-helvetica2 text-2xs sm:text-xs text-neutral400 mr-xs"
-                  >
-                  </h4>
-                  <p class="performance text-neutral300">
-                    <span class="text-positive100"> CTR: +0,1%</span> &<span
-                      class="text-positive100"
-                    >
-                      BTR: +0,05%</span
-                    >
-                  </p>
-                </div>
-                <p
-                  class="template_beskrivelse max-w-lg font-georgia text-2xs text-neutral300 hidden sm:block"
-                >
-                </p>
-              </div>
-              <div class="card-btn flex items-end ml-auto pt-sm">
-                <Button2 href="">Top & midscroll</Button2>
-              </div>
-            </div>
           </div>
         </template>
       </div>
-    </div>
 
-    <section
-      class="sm:block sm:masonry-sm md:masonry-md w-full"
-      id="offline-gallery"
+      <section
+        class="sm:block sm:masonry-sm md:masonry-md w-full"
+        id="offline-gallery"
+      >
+      </section>
+      <Button6>View Selected</Button6>
+      <Button7>Deselect All</Button7>
+    </div>
+    <div
+      id="video"
+      class="w-full sm:pt-lg flex flex-col items-center justify-center sm:block"
     >
-    </section>
-    <Button6>View Selected</Button6>
-    <Button7>Deselect All</Button7>
+      <div class="flex items-end justify-cent gap-xs pt-sm pb-sm">
+        <h2 class="font-helvetica2 sm:text-lg md:text-xl text-md">video</h2>
+        <img
+          src="../icons/fakta.svg"
+          class="max-w-[45px] lg:hidden sm:max-w-[70px]"
+          alt="icon of a checklist"
+        />
+      </div>
+      <div
+        class="filters_and_facts flex md:flex-col md:w-fit md:items-start justify-center lg:items-center lg:w-full lg:flex-row flex-col items-center w-full gap-xs text-neutral400"
+      >
+        <div class="banners_titles text-xs flex gap-xs">
+          <h2 class="font-helvetica2 uppercase" id="video-brandTitle"></h2>
+          <div>|</div>
+          <h3 class="font-helvetica" id="video-kategoriSubtitle"></h3>
+        </div>
+
+        <div class="p-2 m-5 flex">
+          <!-- Added dropdown menus for category and brand -->
+          <div class="flex gap-xs font-helvetica text-2xs sm:text-xs">
+            <select
+              id="video-kategoriSelect"
+              class="py-2xs md:py-xs md:px-sm px-xs rounded-lg flex bg-neutral200 z-38"
+            >
+              <option value="">All types</option>
+              <!-- Options will be added dynamically -->
+            </select>
+
+            <select
+              class="py-2xs px-xs rounded-lg md:py-xs md:px-sm bg-neutral200 z-38"
+              id="video-brandSelect"
+            >
+              <option value="">All brands</option>
+              <!-- Options will be added dynamically -->
+            </select>
+          </div>
+        </div>
+        <div class="fakta_desk lg:flex ml-auto hidden">
+          <img
+            src="../icons/fakta2.svg"
+            class="max-h-[70px] hidden md:flex"
+            alt="icon of a checklist"
+          />
+        </div>
+      </div>
+
+      <div class="pt-sm">
+        <template class="video-template">
+          <div class="break-inside-avoid pt-sm">
+            <article
+              class="video-template_article max-w-[500px] lg:rounded-md h-fit rounded-sm bg-primary100 group shadow-lg"
+            >
+              <div class="hover-message">Click to select</div>
+              <img
+                class="video-template_frame shadow-lg lg:rounded-md pointer-events-none rounded-sm"
+                src=""
+              />
+            </article>
+          </div>
+        </template>
+      </div>
+
+      <section
+        class="sm:block sm:masonry-sm md:masonry-md w-full"
+        id="video-gallery"
+      >
+      </section>
+      <Button6>View Selected</Button6>
+      <Button7>Deselect All</Button7>
+    </div>
     <script>
-      import "../scripts/script4.js";
+      import "../scripts/offline.js";
     </script>
   </section>
 </MainLayout>
