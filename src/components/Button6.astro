@@ -1,13 +1,15 @@
 ---
 ---
 
-<button
-  id="deselect-all-cards"
+<a
+  target="_blank"
+  rel="noopener noreferrer"
+  id="offline-view-selected-cards"
   type="button"
-  class="appearance-none text-xs w-xl fixed bottom-[5%] right-[10%] hidden knap py-xs px-sm text-alert100 shadow:md bg-primary100 font-semibold rounded-lg hover:bg-purple-700 -outline-offset-2 outline outline-alert100"
+  class="appearance-none fixed w-xl text-xs bottom-[15%] hidden right-[10%] knap py-xs px-sm bg-positive100 text-primary100 shadow:lg font-semibold rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75"
 >
   <slot />
-</button>
+</a>
 
 <style>
   .knap {

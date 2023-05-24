@@ -6,6 +6,8 @@ import "../styles/styles.css";
 import Button2 from "../components/Button2.astro";
 import Button3 from "../components/Button3.astro";
 import Button4 from "../components/Button4.astro";
+import Button6 from "../components/Button6.astro";
+import Button7 from "../components/Button7.astro";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -52,27 +54,27 @@ import Button4 from "../components/Button4.astro";
         />
       </div>
       <div
-        class="filters_and_facts flex md:flex-col md:w-fit md:items-start justify-center lg:items-center lg:w-full lg:flex-row flex-col items-center w-full gap-xs text-neutral400 outline"
+        class="filters_and_facts flex md:flex-col md:w-fit md:items-start justify-center lg:items-center lg:w-full lg:flex-row flex-col items-center w-full gap-xs text-neutral400"
       >
-        <div class="banners_titles text-2xs sm:text-xs flex mr-sm">
+        <div class="banners_titles text-xs flex gap-xs">
           <h2 class="font-helvetica2 uppercase" id="brandTitle"></h2>
-          <div class="px-xs">|</div>
+          <div>|</div>
           <h3 class="font-helvetica" id="kategoriSubtitle"></h3>
         </div>
 
-        <div class="p-2 m-5 flex" id="frames_test">
+        <div class="p-2 m-5 flex">
           <!-- Added dropdown menus for category and brand -->
           <div class="flex gap-xs font-helvetica text-2xs sm:text-xs">
             <select
               id="kategoriSelect"
-              class="py-2xs md:py-xs md:px-sm px-xs rounded-lg flex bg-neutral200 z-50"
+              class="py-2xs md:py-xs md:px-sm px-xs rounded-lg flex bg-neutral200 z-38"
             >
               <option value="">All types</option>
               <!-- Options will be added dynamically -->
             </select>
 
             <select
-              class="py-2xs px-xs rounded-lg md:py-xs md:px-sm bg-neutral200 z-50"
+              class="py-2xs px-xs rounded-lg md:py-xs md:px-sm bg-neutral200 z-38"
               id="brandSelect"
             >
               <option value="">All brands</option>
@@ -140,45 +142,110 @@ import Button4 from "../components/Button4.astro";
       <Button3>View Selected</Button3>
       <Button4>Deselect All</Button4>
       <!-- <button id="deselect-all-cards" type="button">Deselect All</button> -->
+      <script>
+        // import "../scripts/script2.js";
+      </script>
     </div>
-    <div class="w-full pt-xl" id="offline">
+    <div
+      id="offline"
+      class="w-full sm:pt-lg flex flex-col items-center justify-center sm:block"
+    >
+      <div class="flex items-end justify-cent gap-xs pt-sm pb-sm">
+        <h2 class="font-helvetica2 sm:text-lg md:text-xl text-md">offline</h2>
+        <img
+          src="../icons/fakta.svg"
+          class="max-w-[45px] lg:hidden sm:max-w-[70px]"
+          alt="icon of a checklist"
+        />
+      </div>
       <div
-        class="offline-text-and-filters flex flex-col gap-sm sm:gap-md outline items-center justify-center"
+        class="filters_and_facts flex md:flex-col md:w-fit md:items-start justify-center lg:items-center lg:w-full lg:flex-row flex-col items-center w-full gap-xs text-neutral400"
       >
-        <h2
-          class="offline-title outline sm:text-xl text-md font-helvetica2 sm:w-full mr-[0px] sm:mr-auto"
-        >
-          offline
-        </h2>
-        <div
-          class="offline-brand-and-type-and-filters sm:flex-row flex-col sm:w-full sm:mr-auto flex gap:xs sm:gap-sm items-center text-xs font-helvetica2 text-neutral400"
-        >
-          <div class="offline-brand-and-type flex gap-xs">
-            <h3 class="uppercase">garnier</h3>
-            <div>|</div>
-            <h4 class="offline-brand capitalize font-helvetica">OOH</h4>
-          </div>
-          <div
-            class="offline-filters font-helvetica text-2xs sm:text-xs flex gap-sm"
-          >
+        <div class="banners_titles text-xs flex gap-xs">
+          <h2 class="font-helvetica2 uppercase" id="offline-brandTitle"></h2>
+          <div>|</div>
+          <h3 class="font-helvetica" id="offline-kategoriSubtitle"></h3>
+        </div>
+
+        <div class="p-2 m-5 flex">
+          <!-- Added dropdown menus for category and brand -->
+          <div class="flex gap-xs font-helvetica text-2xs sm:text-xs">
             <select
-              class="py-2xs md:py-xs md:px-sm px-xs rounded-md bg-neutral200"
-              name="type"
-              id=""><option value="">All types</option></select
+              id="offline-kategoriSelect"
+              class="py-2xs md:py-xs md:px-sm px-xs rounded-lg flex bg-neutral200 z-38"
             >
+              <option value="">All types</option>
+              <!-- Options will be added dynamically -->
+            </select>
+
             <select
-              class="py-2xs md:py-xs md:px-sm px-xs rounded-md bg-neutral200"
-              name="brand"
-              id=""><option value="">All brands</option></select
+              class="py-2xs px-xs rounded-lg md:py-xs md:px-sm bg-neutral200 z-38"
+              id="offline-brandSelect"
             >
+              <option value="">All brands</option>
+              <!-- Options will be added dynamically -->
+            </select>
           </div>
         </div>
+        <div class="fakta_desk lg:flex ml-auto hidden">
+          <img
+            src="../icons/fakta2.svg"
+            class="max-h-[70px] hidden md:flex"
+            alt="icon of a checklist"
+          />
+        </div>
       </div>
-      <div class="offline-content"></div>
+
+      <div class="pt-sm">
+        <template class="offline-template">
+          <div class="break-inside-avoid">
+            <article
+              class="offline-template_article max-w-[500px] lg:rounded-md h-fit rounded-sm bg-primary100 group shadow-lg"
+            >
+              <div class="hover-message">Click to select</div>
+              <img
+                class="offline-template_frame shadow-lg lg:rounded-md pointer-events-none rounded-sm"
+                src=""
+              />
+            </article>
+            <div class="text-and-btns group-hover:p-xs sm:group-hover:p-sm">
+              <div class="card_text flex flex-col w-fit">
+                <div class="flex items-center pb-xs">
+                  <h4
+                    class="template_navn font-helvetica2 text-2xs sm:text-xs text-neutral400 mr-xs"
+                  >
+                  </h4>
+                  <p class="performance text-neutral300">
+                    <span class="text-positive100"> CTR: +0,1%</span> &<span
+                      class="text-positive100"
+                    >
+                      BTR: +0,05%</span
+                    >
+                  </p>
+                </div>
+                <p
+                  class="template_beskrivelse max-w-lg font-georgia text-2xs text-neutral300 hidden sm:block"
+                >
+                </p>
+              </div>
+              <div class="card-btn flex items-end ml-auto pt-sm">
+                <Button2 href="">Top & midscroll</Button2>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
     </div>
 
+    <section
+      class="flex sm:block sm:masonry-sm md:masonry-md"
+      id="offline-gallery"
+    >
+    </section>
+    <Button6>View Selected</Button6>
+    <Button7>Deselect All</Button7>
     <script>
-      import "../scripts/script2.js";
+      import "../scripts/script4.js";
     </script>
   </section>
 </MainLayout>
