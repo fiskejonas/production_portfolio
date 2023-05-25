@@ -27,26 +27,30 @@
 }
 
 @layer utilities {
-  @variants responsive {
-    .masonry {
-      column-gap: 1.5em;
-      column-count: 1;
-    }
+  .masonry {
+    column-gap: 1.5em;
+    column-count: 1;
+  }
+  @media (min-width: 640px) {
     .masonry-sm {
       column-gap: 1.5em;
       column-count: 2;
     }
+  }
+  @media (min-width: 768px) {
     .masonry-md {
       column-gap: 1.5em;
       column-count: 3;
     }
+  }
+  @media (min-width: 1024px) {
     .masonry-lg {
       column-gap: 1.5em;
       column-count: 4;
     }
-    .break-inside {
-      break-inside: avoid;
-    }
+  }
+  .break-inside {
+    break-inside: avoid;
   }
 }
 
@@ -110,6 +114,12 @@ article {
   width: 35px;
   height: 35px;
   filter: invert(100%);
+}
+
+#video-gallery2 {
+  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 @container card (min-width: 700px) {

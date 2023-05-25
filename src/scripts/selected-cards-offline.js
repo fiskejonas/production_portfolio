@@ -1,5 +1,5 @@
 // URL to the API and options with API key
-const fil = "../actors.json";
+const fil = "../offline.json";
 
 // Funktion til at hente valgte kort-IDs fra URL'en
 function getSelectedCardIds() {

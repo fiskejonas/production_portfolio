@@ -1,5 +1,5 @@
 // URL to the API and options with API key
-const fil = "../actors.json";
+const fil = "../offline.json";
 
 // Card data
 let cards;

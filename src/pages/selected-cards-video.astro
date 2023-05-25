@@ -2,18 +2,9 @@
 // Component Imports
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/styles.css";
-import Button2 from "../components/Button2.astro";
 import Button5 from "../components/Button5.astro";
 ---
 
-<template class="video-template">
-  <article class="video-template_article lg:rounded-md rounded-sm group">
-    <img
-      class="video-template_frame lg:rounded-md pointer-events-none shadow-lg rounded-sm"
-      src=""
-    />
-  </article>
-</template>
 <MainLayout title="Selected Creative Assets">
   <div
     class="selected_wrapper w-full h-full flex flex-col items-center justify-center mt-md"
@@ -34,7 +25,18 @@ import Button5 from "../components/Button5.astro";
     <div class="border border-b-4 mt-md w-1/2"></div>
     <Button5>Copy link</Button5>
   </div>
-
+  <template class="video-template">
+    <article
+      class="video-template_article max-w-[500px] lg:rounded-md rounded-sm group"
+    >
+      <video
+        width="1080px"
+        height="1920px"
+        controls
+        class="video-template_frame shadow-lg lg:rounded-md rounded-sm"
+        src=""></video>
+    </article>
+  </template>
   <script>
     import "../scripts/selected-cards-video.js";
   </script>

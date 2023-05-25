@@ -1,5 +1,5 @@
 // URL to the API and options with API key
-const fil = "../actors.json";
+const fil = "../video.json";
 
 // Funktion til at hente valgte kort-IDs fra URL'en
 function getSelectedCardIds() {
@@ -36,7 +36,7 @@ function visCards(cardsToDisplay) {
   cardsToDisplay.forEach((card) => {
     const klon = template.cloneNode(true);
 
-    klon.querySelector(".video-template_frame").src = "../images/" + card.link;
+    klon.querySelector(".video-template_frame").src = "../video/" + card.link;
     section.appendChild(klon);
   });
 }
