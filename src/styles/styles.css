@@ -54,6 +54,20 @@
   }
 }
 
+#hero {
+  display: grid;
+  grid-template-columns: 1.3fr 2fr;
+}
+
+.other-links a .hej:hover {
+  opacity: 1;
+}
+
+.other-links a .hej {
+  transition: 200ms ease-in-out;
+  opacity: 0.8;
+}
+
 header {
   z-index: 49;
   transition: 200ms ease-in-out;

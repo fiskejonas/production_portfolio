@@ -16,23 +16,24 @@ import Button9 from "../components/Button9.astro";
 ---
 
 <MainLayout title="Wavemaker Production">
-  <section id="hero">
-    <div class="grid place-items-center h-screen content-center">
-      <div class="flex flex-col place-items-center max-w-[400px]">
-        <h1 class="text-2xl font-helvetica2">
-          pro <br /> duc <br /> tion<span class="text-accent200">.</span>
-        </h1>
-        <h2 class="font-helvetica2 text-xs pt-xs sibling1 text-neutral400">
-          Banners. Offline. Video.
-        </h2>
-        <p class="font-georgia text-2xs sibling2 pt-xs text-neutral400">
-          Here you’ll find the production teams’ best work and a collection of
-          selected cases.
-        </p>
-        <div class="flex flex-col mt-sm gap-xs">
-          <Button>Take me to the archive!</Button>
-        </div>
+  <section class="h-screen justify-start place-items-center" id="hero">
+    <div class="flex flex-col place-items-center w-fit max-w-[400px]">
+      <h1 class="text-2xl font-helvetica2">
+        pro <br /> duc <br /> tion<span class="text-accent200">.</span>
+      </h1>
+      <h2 class="font-helvetica2 text-xs pt-xs sibling1 text-neutral400">
+        Banners. Offline. Video.
+      </h2>
+      <p class="font-georgia text-2xs sibling2 pt-xs text-neutral400">
+        Here you’ll find the production teams’ best work and a collection of
+        selected cases.
+      </p>
+      <div class="flex flex-col mt-sm gap-xs">
+        <Button>Take me to the archive!</Button>
       </div>
+    </div>
+    <div class="hero-img w-full h-auto">
+      <img src="../images/blender_render4.webp" alt="" />
     </div>
   </section>
   <section class="grid w-full place-items-center" id="archive">
