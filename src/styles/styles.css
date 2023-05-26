@@ -56,7 +56,7 @@
 
 #hero {
   display: grid;
-  grid-template-columns: 1.3fr 2fr;
+  grid-template-columns: 1fr 2.5fr;
 }
 
 .other-links a .hej:hover {

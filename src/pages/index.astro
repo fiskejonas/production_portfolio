@@ -16,8 +16,8 @@ import Button9 from "../components/Button9.astro";
 ---
 
 <MainLayout title="Wavemaker Production">
-  <section class="h-screen items-center content-center" id="hero">
-    <div class="flex flex-col place-items-center w-full max-w-[400px]">
+  <section class="h-screen place-items-center" id="hero">
+    <div class="flex hero_text flex-col place-items-center w-fit max-w-[400px]">
       <h1 class="text-2xl font-helvetica2">
         pro <br /> duc <br /> tion<span class="text-accent200">.</span>
       </h1>
@@ -32,9 +32,12 @@ import Button9 from "../components/Button9.astro";
         <Button>Take me to the archive!</Button>
       </div>
     </div>
-    <div class="hero-img w-full h-auto">
+    <div id="hero-img" class="w-full h-auto max-w-[700px]">
       <img src="../images/blender_render4.webp" alt="" />
     </div>
+    <script>
+      import "../scripts/parralax.js";
+    </script>
   </section>
   <section class="grid w-full place-items-center" id="archive">
     <div class="banners_and_border w-full flex">
