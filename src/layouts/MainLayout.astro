@@ -2,6 +2,12 @@
 import "../styles/styles.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Button3 from "../components/Button3.astro";
+import Button4 from "../components/Button4.astro";
+import Button6 from "../components/Button6.astro";
+import Button7 from "../components/Button7.astro";
+import Button8 from "../components/Button8.astro";
+import Button9 from "../components/Button9.astro";
 let { title } = Astro.props;
 ---
 
@@ -15,6 +21,12 @@ let { title } = Astro.props;
   </head>
   <body class="bg-neutral100 dark:bg-neutral500">
     <Header />
+    <Button3>View Selected</Button3>
+    <Button4>Deselect All</Button4>
+    <Button6>View Selected</Button6>
+    <Button7>Deselect All</Button7>
+    <Button8>View Selected</Button8>
+    <Button9>Deselect All</Button9>
     <main class="bg-neutral100 ml-[25px] mr-[25px] sm:ml-[150px] sm:mr-[50px]">
       <slot />
     </main>

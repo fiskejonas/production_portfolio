@@ -1,6 +1,14 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed");
   document.querySelector("#menu-btn").addEventListener("click", showMenu);
+
+  // Select all the links in your menu
+  let menuLinks = document.querySelectorAll(".other-links a");
+
+  // Add event listener to each link
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", showMenu);
+  });
 });
 
 // Initial function to check screen width and adapt the menu
