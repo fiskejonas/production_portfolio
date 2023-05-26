@@ -11,7 +11,7 @@ import Button2 from "../components/Button2.astro";
 
 <MainLayout title="Wavemaker Production">
   <section
-    class="h-screen dark:bg-neutral500 flex flex-col justify-center md:place-items-center items-center"
+    class="h-screen dark:bg-neutral500 hero1 flex flex-col justify-center md:place-items-center items-center"
     id="hero"
   >
     <div class="flex hero_text flex-col place-items-center max-w-[400px]">
@@ -34,7 +34,12 @@ import Button2 from "../components/Button2.astro";
       </div>
     </div>
     <div id="hero-img" class="w-full hidden md:block h-auto max-w-[700px]">
-      <img src="../images/blender_render4.webp" alt="" />
+      <img
+        width="1887px"
+        height="1887px"
+        src="../images/blender_render4.webp"
+        alt=""
+      />
     </div>
     <script>
       import "../scripts/parralax.js";
@@ -56,7 +61,9 @@ import Button2 from "../components/Button2.astro";
       id="banners"
       class="w-full sm:pt-lg flex flex-col items-center justify-center sm:block"
     >
-      <div class="flex items-end justify-cent gap-xs pt-sm pb-sm">
+      <div
+        class="flex items-end justify-cent gap-xs pt-sm pb-sm banners-and-facts"
+      >
         <h3
           class="font-helvetica2 sm:text-md md:text-lg text-sm dark:text-neutral200"
         >
