@@ -7,22 +7,25 @@ import Button5 from "../components/Button5.astro";
 
 <MainLayout title="Selected Creative Assets">
   <div
-    class="selected_wrapper w-full h-full flex flex-col items-center justify-center mt-md"
+    class="selected_wrapper w-full h-full flex flex-col items-center justify-center mt-md dark:bg-neutral500"
   >
     <div
       class="selected_titles flex flex-col w-full pt-md pb-sm items-center justify-center gap-xs h-full"
     >
-      <h1 class="text-lg font-helvetica2">
+      <h1 class="text-lg font-helvetica2 dark:text-neutral100">
         video<span class="text-accent100">.</span>
       </h1>
-      <h2 class="text-sm font-helvetica2 text-neutral300">
+      <h2 class="text-sm font-helvetica2 dark:text-neutral200 text-neutral300">
         Wavemaker Production
       </h2>
     </div>
-    <section class="w-full h-full" id="video-gallery2"></section>
+    <section class="w-full h-full dark:bg-neutral500" id="video-gallery2">
+    </section>
   </div>
-  <div class="line flex flex-col items-center justify-center w-full">
-    <div class="border border-b-4 mt-md w-1/2"></div>
+  <div
+    class="line flex flex-col items-center justify-center dark:bg-neutral500 w-full"
+  >
+    <div class="border border-b-4 mt-md w-1/2 dark:invert"></div>
     <Button5>Copy link</Button5>
   </div>
   <template class="video-template">

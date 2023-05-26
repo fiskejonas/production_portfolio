@@ -16,15 +16,22 @@ import Button9 from "../components/Button9.astro";
 ---
 
 <MainLayout title="Wavemaker Production">
-  <section class="h-screen place-items-center" id="hero">
-    <div class="flex hero_text flex-col place-items-center w-fit max-w-[400px]">
-      <h1 class="text-2xl font-helvetica2">
+  <section
+    class="h-screen dark:bg-neutral500 flex flex-col justify-center md:place-items-center items-center"
+    id="hero"
+  >
+    <div class="flex hero_text flex-col place-items-center max-w-[400px]">
+      <h1 class="text-2xl font-helvetica2 dark:text-neutral100">
         pro <br /> duc <br /> tion<span class="text-accent200">.</span>
       </h1>
-      <h2 class="font-helvetica2 text-xs pt-xs sibling1 text-neutral400">
+      <h2
+        class="font-helvetica2 text-xs pt-xs sibling1 text-neutral400 dark:text-neutral200"
+      >
         Banners. Offline. Video.
       </h2>
-      <p class="font-georgia text-2xs sibling2 pt-xs text-neutral400">
+      <p
+        class="font-georgia text-2xs sibling2 pt-xs text-neutral400 dark:text-neutral200"
+      >
         Here you’ll find the production teams’ best work and a collection of
         selected cases.
       </p>
@@ -32,17 +39,22 @@ import Button9 from "../components/Button9.astro";
         <Button>Take me to the archive!</Button>
       </div>
     </div>
-    <div id="hero-img" class="w-full h-auto max-w-[700px]">
+    <div id="hero-img" class="w-full hidden md:block h-auto max-w-[700px]">
       <img src="../images/blender_render4.webp" alt="" />
     </div>
     <script>
       import "../scripts/parralax.js";
     </script>
   </section>
-  <section class="grid w-full place-items-center" id="archive">
+  <section
+    class="grid w-full place-items-center dark:bg-neutral500"
+    id="archive"
+  >
     <div class="banners_and_border w-full flex">
-      <div class="border-b-4 border-dashed w-full"></div>
-      <h2 class="sm:text-lg text-md font-helvetica2 flex justify-end">
+      <div class="border-b-4 border-dashed dark:text-neutral300 w-full"></div>
+      <h2
+        class="sm:text-lg text-md font-helvetica2 flex justify-end dark:text-neutral100"
+      >
         archive<span class="text-accent200">.</span>
       </h2>
     </div>
@@ -51,7 +63,11 @@ import Button9 from "../components/Button9.astro";
       class="w-full sm:pt-lg flex flex-col items-center justify-center sm:block"
     >
       <div class="flex items-end justify-cent gap-xs pt-sm pb-sm">
-        <h3 class="font-helvetica2 sm:text-md md:text-lg text-sm">banners</h3>
+        <h3
+          class="font-helvetica2 sm:text-md md:text-lg text-sm dark:text-neutral200"
+        >
+          banners
+        </h3>
         <a href="/#facts">
           <img
             src="../icons/fakta.svg"
@@ -63,7 +79,7 @@ import Button9 from "../components/Button9.astro";
       <div
         class="filters_and_facts flex md:flex-col md:w-fit md:items-start justify-center lg:items-center lg:w-full lg:flex-row flex-col items-center w-full gap-xs text-neutral400"
       >
-        <div class="banners_titles text-xs flex gap-xs">
+        <div class="banners_titles text-xs flex gap-xs dark:text-neutral200">
           <h2 class="font-helvetica2 uppercase" id="brandTitle"></h2>
           <div>|</div>
           <h3 class="font-helvetica" id="kategoriSubtitle"></h3>
@@ -90,7 +106,7 @@ import Button9 from "../components/Button9.astro";
           <a href="/#facts">
             <img
               src="../icons/fakta2.svg"
-              class="max-h-[70px] hidden md:flex"
+              class="max-h-[70px] hidden md:flex dark:invert"
               alt="icon of a checklist"
             />
           </a>
@@ -149,7 +165,9 @@ import Button9 from "../components/Button9.astro";
       id="offline"
       class="w-full sm:pt-lg flex flex-col items-center justify-center sm:block"
     >
-      <div class="flex items-end justify-cent gap-xs pt-sm pb-sm">
+      <div
+        class="flex items-end justify-cent gap-xs pt-sm dark:text-neutral200 pb-sm"
+      >
         <h3 class="font-helvetica2 sm:text-md md:text-lg text-sm">offline</h3>
         <a href="/#facts">
           <img
@@ -162,7 +180,7 @@ import Button9 from "../components/Button9.astro";
       <div
         class="filters_and_facts flex md:flex-col md:w-fit md:items-start justify-center lg:items-center lg:w-full lg:flex-row flex-col items-center w-full gap-xs text-neutral400"
       >
-        <div class="banners_titles text-xs flex gap-xs">
+        <div class="banners_titles text-xs flex gap-xs dark:text-neutral200">
           <h2 class="font-helvetica2 uppercase" id="offline-brandTitle"></h2>
           <div>|</div>
           <h3 class="font-helvetica" id="offline-kategoriSubtitle"></h3>
@@ -189,7 +207,7 @@ import Button9 from "../components/Button9.astro";
           <a href="/#facts">
             <img
               src="../icons/fakta2.svg"
-              class="max-h-[70px] hidden md:flex"
+              class="max-h-[70px] hidden md:flex dark:invert"
               alt="icon of a checklist"
             />
           </a>
@@ -227,7 +245,9 @@ import Button9 from "../components/Button9.astro";
       id="video"
       class="w-full sm:pt-lg flex flex-col items-center justify-center sm:block"
     >
-      <div class="flex items-end justify-cent gap-xs pt-sm pb-sm">
+      <div
+        class="flex items-end justify-cent gap-xs pt-sm pb-sm dark:text-neutral200"
+      >
         <h3 class="font-helvetica2 sm:text-md md:text-lg text-sm">video</h3>
         <a href="/#facts">
           <img
@@ -240,7 +260,7 @@ import Button9 from "../components/Button9.astro";
       <div
         class="filters_and_facts flex md:flex-col md:w-fit md:items-start justify-center lg:items-center lg:w-full lg:flex-row flex-col items-center w-full gap-xs text-neutral400"
       >
-        <div class="banners_titles text-xs flex gap-xs">
+        <div class="banners_titles text-xs flex dark:text-neutral200 gap-xs">
           <h2 class="font-helvetica2 uppercase" id="video-brandTitle"></h2>
           <div>|</div>
           <h3 class="font-helvetica" id="video-kategoriSubtitle"></h3>
@@ -267,7 +287,7 @@ import Button9 from "../components/Button9.astro";
           <a href="/#facts">
             <img
               src="../icons/fakta2.svg"
-              class="max-h-[70px] hidden md:flex"
+              class="max-h-[70px] hidden dark:invert md:flex"
               alt="icon of a checklist"
             />
           </a>
@@ -304,17 +324,26 @@ import Button9 from "../components/Button9.astro";
       import "../scripts/video.js";
     </script>
   </section>
-  <section class="grid py-xl" id="facts">
+  <section class="grid py-xl dark:bg-neutral500" id="facts">
     <div class="checklist-title flex">
-      <div class="dotted-div border-b-4 border-dashed w-full"></div><h2
-        class="md:text-lg text-sm font-helvetica2"
+      <div
+        class="dotted-div border-b-4 border-dashed w-full dark:text-neutral300"
       >
+      </div><h2 class="md:text-lg text-sm font-helvetica2 dark:text-neutral200">
         deliverables checklist<span class="text-accent200">.</span>
       </h2>
     </div>
     <article class="banner-facts-high-impact pt-md">
-      <h3 class="font-helvetica2 text-md block pb-sm mr-auto">Banners</h3>
-      <h4 class="font-helvetica2 text-sm block pb-sm mr-auto">High impact</h4>
+      <h3
+        class="font-helvetica2 text-md block pb-sm mr-auto dark:text-neutral200"
+      >
+        Banners
+      </h3>
+      <h4
+        class="font-helvetica2 text-sm block pb-sm mr-auto dark:text-neutral200"
+      >
+        High impact
+      </h4>
       <div class="boxes flex flex-wrap gap-sm">
         <div
           class="box1 bg-neutral200 rounded-sm sm:rounded-md flex flex-col w-fit h-fit p-sm gap-sm"
@@ -411,7 +440,9 @@ import Button9 from "../components/Button9.astro";
       </div>
     </article>
     <article class="banner-facts-video-banner pt-lg">
-      <h4 class="font-helvetica2 text-sm block pb-sm mr-auto">
+      <h4
+        class="font-helvetica2 text-sm block dark:text-neutral200 pb-sm mr-auto"
+      >
         Video in banner
       </h4>
       <div class="boxes flex flex-wrap gap-sm">
@@ -499,8 +530,9 @@ import Button9 from "../components/Button9.astro";
       </div>
     </article>
     <article class="required assets pt-lg flex flex-col gap-sm">
-      <h3 class="font-helvetica2 text-md block mr-auto">
-        Required assets - <span class="font-helvetica text-neutral400"
+      <h3 class="font-helvetica2 text-md block mr-auto dark:text-neutral200">
+        Required assets - <span
+          class="font-helvetica text-neutral400 dark:text-neutral200"
           >for all banners</span
         >
       </h3>

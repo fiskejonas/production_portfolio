@@ -53,10 +53,11 @@
     break-inside: avoid;
   }
 }
-
-#hero {
-  display: grid;
-  grid-template-columns: 1fr 2.5fr;
+@media (min-width: 768px) {
+  #hero {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+  }
 }
 
 .other-links a .hej:hover {
