@@ -143,5 +143,5 @@ function updateButtonVisibility() {
   }
 }
 
-var siblingWidth = document.querySelector(".sibling1").offsetWidth;
+let siblingWidth = document.querySelector(".sibling1").offsetWidth;
 document.querySelector(".sibling2").style.width = siblingWidth + "px";

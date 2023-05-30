@@ -26,8 +26,8 @@ import Button2 from "../components/Button2.astro";
       <p
         class="font-georgia text-2xs sibling2 pt-xs text-neutral400 dark:text-neutral200"
       >
-        Here you’ll find the production teams’ best work and a collection of
-        selected cases.
+        Here you’ll find the production teams’ best work. Filter through, and
+        share what you like.
       </p>
       <div class="flex flex-col mt-sm gap-xs">
         <Button>Take me to the archive!</Button>
@@ -59,7 +59,7 @@ import Button2 from "../components/Button2.astro";
     </div>
     <div
       id="banners"
-      class="w-full sm:pt-lg flex flex-col items-center justify-center sm:block"
+      class="w-full sm:pt-lg flex flex-col items-center section1 justify-center sm:block"
     >
       <div
         class="flex items-end justify-cent gap-xs pt-sm pb-sm banners-and-facts"
@@ -72,7 +72,7 @@ import Button2 from "../components/Button2.astro";
         <a href="/#facts">
           <img
             src="../icons/fakta.svg"
-            class="max-w-[45px] lg:hidden sm:max-w-[70px]"
+            class="max-w-[45px] lg:hidden sm:max-w-[70px] dark:invert"
             alt="icon of a checklist"
           />
         </a>
@@ -107,7 +107,7 @@ import Button2 from "../components/Button2.astro";
           <a href="/#facts">
             <img
               src="../icons/fakta2.svg"
-              class="max-h-[70px] hidden md:flex dark:invert"
+              class="max-h-[70px] hidden md:flex dark:invert fact"
               alt="icon of a checklist"
             />
           </a>
@@ -164,7 +164,7 @@ import Button2 from "../components/Button2.astro";
     </div>
     <div
       id="offline"
-      class="w-full sm:pt-lg flex flex-col items-center justify-center sm:block"
+      class="w-full sm:pt-lg flex flex-col items-center section1 justify-center sm:block"
     >
       <div
         class="flex items-end justify-cent gap-xs pt-sm dark:text-neutral200 pb-sm"
@@ -173,7 +173,7 @@ import Button2 from "../components/Button2.astro";
         <a href="/#facts">
           <img
             src="../icons/fakta.svg"
-            class="max-w-[45px] lg:hidden sm:max-w-[70px]"
+            class="max-w-[45px] lg:hidden sm:max-w-[70px] dark:invert"
             alt="icon of a checklist"
           />
         </a>
@@ -208,7 +208,7 @@ import Button2 from "../components/Button2.astro";
           <a href="/#facts">
             <img
               src="../icons/fakta2.svg"
-              class="max-h-[70px] hidden md:flex dark:invert"
+              class="max-h-[70px] hidden md:flex dark:invert fact"
               alt="icon of a checklist"
             />
           </a>
@@ -232,7 +232,7 @@ import Button2 from "../components/Button2.astro";
       </div>
 
       <section
-        class="sm:block sm:masonry-sm md:masonry-md w-full"
+        class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 w-full"
         id="offline-gallery"
       >
       </section>
@@ -244,7 +244,7 @@ import Button2 from "../components/Button2.astro";
     </script>
     <div
       id="video"
-      class="w-full sm:pt-lg flex flex-col items-center justify-center sm:block"
+      class="w-full sm:pt-lg flex flex-col items-center section1 justify-center sm:block"
     >
       <div
         class="flex items-end justify-cent gap-xs pt-sm pb-sm dark:text-neutral200"
@@ -253,7 +253,7 @@ import Button2 from "../components/Button2.astro";
         <a href="/#facts">
           <img
             src="../icons/fakta.svg"
-            class="max-w-[45px] lg:hidden sm:max-w-[70px]"
+            class="max-w-[45px] lg:hidden sm:max-w-[70px] dark:invert"
             alt="icon of a checklist"
           />
         </a>
@@ -288,7 +288,7 @@ import Button2 from "../components/Button2.astro";
           <a href="/#facts">
             <img
               src="../icons/fakta2.svg"
-              class="max-h-[70px] hidden dark:invert md:flex"
+              class="max-h-[70px] hidden dark:invert md:flex fact"
               alt="icon of a checklist"
             />
           </a>
@@ -314,7 +314,7 @@ import Button2 from "../components/Button2.astro";
       </div>
 
       <section
-        class="sm:block sm:masonry-sm md:masonry-md w-full"
+        class="columns-1 md:columns-2 lg:columns-3 w-full"
         id="video-gallery"
       >
       </section>

@@ -56,3 +56,26 @@ function showMenu() {
     }
   }
 }
+
+const sections = document.querySelectorAll(".section1");
+const menu_links = document.querySelectorAll(".menu-item");
+
+window.addEventListener("scroll", function () {
+  let fromTop = window.scrollY;
+
+  menu_links.forEach((link) => {
+    let section = document.querySelector(link.hash);
+
+    // get the img element
+    let img = link.querySelector("img");
+
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      img.classList.add("current");
+    } else {
+      img.classList.remove("current");
+    }
+  });
+});

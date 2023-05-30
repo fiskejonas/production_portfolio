@@ -2,6 +2,11 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
   theme: {
+    extend: {
+      cursor: {
+        "orange-dot": "url(../icons/orange_dot.svg) 10 10, pointer",
+      },
+    },
     colors: {
       primary100: "#FFFFFF",
       sekundary100: "#000000",

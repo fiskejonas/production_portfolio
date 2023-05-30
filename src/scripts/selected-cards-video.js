@@ -46,25 +46,26 @@ displaySelectedCards();
 
 const button = document.getElementById("copyButton");
 
-button.addEventListener("click", () => {
+button.addEventListener("click", async () => {
   // Get the current page URL
   const link = window.location.href;
 
-  // Create a new textarea element, set its value to the link, and add it to the DOM
-  const textarea = document.createElement("textarea");
-  textarea.value = link;
-  document.body.appendChild(textarea);
+  // Use the Clipboard API to copy the link
+  try {
+    await navigator.clipboard.writeText(link);
 
-  // Select the link inside the textarea and copy it to the clipboard
-  textarea.select();
-  document.execCommand("copy");
+    // Change the button text to indicate that the link has been copied
+    button.textContent = "Link Copied!";
 
-  // Remove the textarea from the DOM
-  document.body.removeChild(textarea);
+    // Change the button background color to green
+    button.style.backgroundColor = "#58C369";
 
-  // Change the button text to indicate that the link has been copied
-  button.textContent = "Link Copied!";
-
-  // Change the button text back after 4 seconds
-  setTimeout(() => (button.textContent = "Copy Link"), 4000);
+    // Change the button text and color back after 4 seconds
+    setTimeout(() => {
+      button.textContent = "Copy Link";
+      button.style.backgroundColor = ""; // This will reset it to the default or CSS-defined color
+    }, 3000);
+  } catch (err) {
+    console.error("Failed to copy link: ", err);
+  }
 });
