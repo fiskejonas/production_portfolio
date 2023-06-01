@@ -48,23 +48,18 @@ displaySelectedCards();
 const button = document.getElementById("copyButton");
 
 button.addEventListener("click", async () => {
-  // Get the current page URL
   const link = window.location.href;
 
-  // Use the Clipboard API to copy the link
   try {
     await navigator.clipboard.writeText(link);
 
-    // Change the button text to indicate that the link has been copied
     button.textContent = "Link Copied!";
 
-    // Change the button background color to green
     button.style.backgroundColor = "#58C369";
 
-    // Change the button text and color back after 4 seconds
     setTimeout(() => {
       button.textContent = "Copy Link";
-      button.style.backgroundColor = ""; // This will reset it to the default or CSS-defined color
+      button.style.backgroundColor = "";
     }, 3000);
   } catch (err) {
     console.error("Failed to copy link: ", err);

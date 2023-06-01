@@ -1,4 +1,4 @@
-// URL to the API and options with API key
+// URL til API'en og indstillinger med API-nøgle
 const url = "https://frames-5130.restdb.io/rest/frames";
 const options = {
   headers: {
@@ -6,10 +6,10 @@ const options = {
   },
 };
 
-// Card data
+// Kortdata
 let cards;
 
-// Asynchronous function to get card data from the API
+// Asynkron funktion til at hente kortdata fra API'en
 async function fetchData() {
   const JSONDATA = await fetch(url, options);
   cards = await JSONDATA.json();
@@ -20,11 +20,13 @@ async function fetchData() {
   let categories = new Set();
   let brands = new Set();
 
+  // Fylder brands og categories med data fra API
   cards.forEach((card) => {
     categories.add(card.kategori);
     brands.add(card.brand);
   });
 
+  // Tilføjer hver unik kategori til dropdown menuen
   categories.forEach((kategori) => {
     const option = document.createElement("option");
     option.value = kategori;
@@ -32,6 +34,7 @@ async function fetchData() {
     categorySelect.appendChild(option);
   });
 
+  // Tilføjer hver unik brand til dropdown menuen
   brands.forEach((brand) => {
     const option = document.createElement("option");
     option.value = brand;
@@ -39,15 +42,15 @@ async function fetchData() {
     brandSelect.appendChild(option);
   });
 
-  // Show card data once it's fetched
+  // Viser kortdata, når det er hentet
   showCards();
   updateButtonVisibility();
 }
 
-// Set to keep track of selected cards
+// Sæt til at holde styr på udvalgte kort
 let selectedCards = new Set();
 
-// Function to display card data in the DOM
+// Funktion til at vise kortdata i DOM'en
 function showCards() {
   const gallery = document.getElementById("gallery");
   const template = document.querySelector("template").content;
@@ -56,13 +59,13 @@ function showCards() {
   const kategori = document.getElementById("kategoriSelect").value;
   const brand = document.getElementById("brandSelect").value;
 
-  // Set the title and subtitle
-  document.getElementById("brandTitle").textContent = brand || "All Brands";
+  // Sæt titlen og undertitlen
+  document.getElementById("brandTitle").textContent = brand || "Alle mærker";
   document.getElementById("kategoriSubtitle").textContent =
-    kategori || "All Categories";
+    kategori || "Alle kategorier";
 
   cards.forEach((card) => {
-    // Show cards that match the filter
+    // Vis kort, der matcher filteret
     if (
       (kategori == "" || kategori == card.kategori) &&
       (brand == "" || brand == card.brand)
@@ -77,11 +80,11 @@ function showCards() {
       clone.querySelector(".knap").href =
         "https://wmcontent.dk/_HighImpact/" + card.top_and_mid_link;
 
-      // Add click event listener to each card
+      // Tilføj klik event listener til hvert kort
       clone
         .querySelector(".template_article")
         .addEventListener("click", (e) => {
-          // Select/deselect card and update selectedCards with ids
+          // Vælg/fravælg kort og opdater selectedCards med id'er
           e.currentTarget.classList.toggle("selected");
           if (selectedCards.has(card)) {
             selectedCards.delete(card);
@@ -91,36 +94,39 @@ function showCards() {
           updateButtonVisibility();
         });
 
-      // Add card clone to the DOM
+      // Tilføj kort klonen til DOM'en
       gallery.appendChild(clone);
     }
   });
 }
 
-// Function to navigate to selected cards page with selected card IDs as query parameters
+// Funktion til at navigere til udvalgte kortside med udvalgte kort-ID'er som forespørgselsparametre
 function navigateToSelectedCards() {
   const selectedIds = Array.from(selectedCards, (card) => card._id).join(",");
   window.location.href = `selected-cards.html?ids=${selectedIds}`;
 }
 
-// Add click event listener to "view-selected-cards" button
+// Tilføj klik event listener til "view-selected-cards" knappen
 document
   .getElementById("view-selected-cards")
   .addEventListener("click", navigateToSelectedCards);
 
-// Fetch and display card data
+// Hent og vis kortdata
 fetchData();
 
-// Add event listeners to dropdowns
+// Tilføj event listeners til dropdowns
 document.getElementById("kategoriSelect").addEventListener("change", showCards);
 document.getElementById("brandSelect").addEventListener("change", showCards);
 
 function deselectAllCards() {
+  // Ryd sættet med udvalgte kort
   selectedCards.clear();
+  // Fjern valgt-klasse fra alle kort
   const selectedElements = document.querySelectorAll(
     ".template_article.selected"
   );
   selectedElements.forEach((el) => el.classList.remove("selected"));
+  // Opdater knapvisning
   updateButtonVisibility();
 }
 
@@ -129,6 +135,7 @@ document
   .addEventListener("click", deselectAllCards);
 
 function updateButtonVisibility() {
+  // Opdaterer synligheden af knapper baseret på om der er valgt kort
   const viewSelectedCardsButton = document.getElementById(
     "view-selected-cards"
   );
@@ -143,5 +150,6 @@ function updateButtonVisibility() {
   }
 }
 
+// Sætter bredden på sibling2 til at være det samme som sibling1
 let siblingWidth = document.querySelector(".sibling1").offsetWidth;
 document.querySelector(".sibling2").style.width = siblingWidth + "px";

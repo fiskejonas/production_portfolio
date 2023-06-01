@@ -58,26 +58,29 @@ displaySelectedCards();
 
 const button = document.getElementById("copyButton");
 
+// Tilføjer en event listener til knappen, som udfører en asynkron funktion når der klikkes
 button.addEventListener("click", async () => {
-  // Get the current page URL
+  // Henter den nuværende side URL
   const link = window.location.href;
 
-  // Use the Clipboard API to copy the link
+  // Bruger Clipboard API til at kopiere linket
   try {
     await navigator.clipboard.writeText(link);
 
-    // Change the button text to indicate that the link has been copied
-    button.textContent = "Link Copied!";
+    // Ændrer knappens tekst til at indikere at linket er blevet kopieret
+    button.textContent = "Link kopieret!";
 
-    // Change the button background color to green
+    // Ændrer knappens baggrundsfarve til grøn
     button.style.backgroundColor = "#58C369";
 
-    // Change the button text and color back after 4 seconds
+    // Ændrer knappens tekst og farve tilbage efter 3 sekunder
     setTimeout(() => {
-      button.textContent = "Copy Link";
-      button.style.backgroundColor = ""; // This will reset it to the default or CSS-defined color
+      button.textContent = "Kopier link";
+      // Dette vil nulstille den til standard eller CSS-defineret farve
+      button.style.backgroundColor = "";
     }, 3000);
   } catch (err) {
+    // Hvis der opstår en fejl, logges det i konsollen
     console.error("Failed to copy link: ", err);
   }
 });
