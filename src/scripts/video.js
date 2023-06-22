@@ -59,6 +59,7 @@ function showCards() {
 
       clone.querySelector(".video-template_frame").src =
         "../video/" + card.link;
+      clone.querySelector(".video-template_frame").muted = true;
 
       clone
         .querySelector(".video-template_article")
@@ -124,3 +125,9 @@ function updateButtonVisibility() {
     deselectAllCardsButton.style.display = "none";
   }
 }
+
+window.onload = function () {
+  console.log("loaded");
+  let element = document.getElementById("video2");
+  element.muted = true;
+};
